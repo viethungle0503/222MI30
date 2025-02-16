@@ -1,0 +1,82 @@
+<div class="container-fluid">
+  <p>{{ errMessage }}</p>
+  <h1 class="text-danger text-center">{{ notification }}</h1>
+  <h3 class="text-center text-white bg-success">Fashion List</h3>
+  <button type="button" class="btn btn-outline-dark" (click)="onAdd()">Add new fashion</button>
+  <table class="table table-hover table-bordered">
+    <tr>
+      <td>Id</td>
+      <td>Fashion Subject</td>
+      <td>Fashion Detail</td>
+      <td>Image</td>
+      <td>Button</td>
+    </tr>
+    <tbody>
+      <tr *ngFor="let fashion of fashions; index as i">
+        <td>{{ fashion._id }}</td>
+        <td>{{ fashion.fashion_subject }}</td>
+        <td [innerHTML]="fashion.fashion_detail"></td>
+        <td>
+          <img src="{{ fashion.fashion_image }}" width="100px" height="100px" />
+        </td>
+        <td>
+          <div class="d-flex flex-column justify-content-between" style="row-gap: 5px;">
+            <button type="button" class="btn btn-outline-success" (click)="onUpdate(fashion)">Update</button>
+            <button type="button" class="btn btn-outline-warning" (click)="onDetail(fashion)">Detail</button>
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              (click)="onDeleteConfirm(fashion._id)"
+            >
+              Delete
+            </button>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Are you sure that you want to delete this item?
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">You cannot restore this process</div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                      #closeModal
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      (click)="onDelete()"
+                    >
+                      Yes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

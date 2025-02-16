@@ -1,0 +1,36 @@
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Ma danh muc</th>
+      <th>Ten danh muc</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let p of products">
+    <tr>
+      <td>{{ p.Cateid }}</td>
+      <td>{{ p.CateName }}</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>Ma San Pham</th>
+              <th>Ten San Pham</th>
+              <th>Gia San Pham</th>
+              <th>Picture</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let subP of p.Products">
+            <tr>
+              <td>{{ subP.ProductId }}</td>
+              <td>{{ subP.ProductName }}</td>
+              <td>{{ subP.Price }}</td>
+              <td><img src="{{ subP.Image }}" alt="" style="height: 100px;width: 100px;"/></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>

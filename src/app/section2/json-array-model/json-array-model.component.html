@@ -1,0 +1,19 @@
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Ma San Pham</th>
+      <th>Ten San Pham</th>
+      <th>Gia San Pham</th>
+      <th>Picture</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let product of products">
+    <tr>
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td><img [src]="product.src" alt="" width="100px" height="100px"></td>
+    </tr>
+  </tbody>
+</table>
+

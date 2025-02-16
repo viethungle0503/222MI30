@@ -1,0 +1,48 @@
+<div class="d-flex flex-column" style="column-gap: 10px; row-gap: 10px;">
+  <p>{{ errMessage }}</p>
+  <h3 class="text-center text-white bg-dark">Fashion Detail</h3>
+  <div class="w-25">
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Please fill in the id of the fashion"
+      aria-label="Please fill in the id of the fashion"
+      #id
+    />
+  </div>
+  <div class="col-auto d-flex flex-row justify-content-evenly">
+    <button
+      type="button"
+      class="btn btn-outline-warning"
+      (click)="onSearch(id.value)"
+    >
+      Find
+    </button>
+    <button class="btn btn-outline-success" (click)="onReturn()">Return to Fashion List</button>
+  </div>
+  
+  <div class="container-fluid">
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Fashion ID</th>
+          <td>{{ fashion?._id }}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fashion Subject</td>
+          <td>{{ fashion?.fashion_subject }}</td>
+        </tr>
+        <tr>
+          <td>Fashion Detail</td>
+          <td [innerHTML]="fashion?.fashion_detail"></td>
+        </tr>
+        <tr>
+          <td>Image</td>
+          <td><img [src]="fashion?.fashion_image" alt=""></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

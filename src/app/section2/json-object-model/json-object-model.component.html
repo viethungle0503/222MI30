@@ -1,0 +1,24 @@
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <td>Product ID:</td>
+      <td>{{ product.id }}</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Product Name:</td>
+      <td>{{ product.name }}</td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td>{{ product.price }}</td>
+    </tr>
+    <tr>
+      <td>Image:</td>
+      <td>
+        <img [src]="product.src" width="100px" height="100px" />
+      </td>
+    </tr>
+  </tbody>
+</table>

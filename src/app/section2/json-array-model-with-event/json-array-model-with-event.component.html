@@ -1,0 +1,29 @@
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <td>Ma San Pham</td>
+      <td>Ten San Pham</td>
+      <td>Gia San Pham</td>
+      <td>Picture</td>
+      <td>#</td>
+    </tr>
+  </thead>
+  <tbody *ngFor="let p of products">
+    <tr>
+      <td>{{ p.id }}</td>
+      <td>{{ p.name }}</td>
+      <td>{{ p.price }}</td>
+      <td>
+        <img src="{{ p.src }}" width="100px" height="100px" />
+      </td>
+      <td>
+        <a
+          style="cursor: pointer"
+          (click)="viewDetail(p)"
+          title="Click here to view detail"
+          >Details</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>

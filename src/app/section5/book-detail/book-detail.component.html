@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <p>book-detail works!</p>
+  <p>{{ errMessage }}</p>
+  <input type="text" #bookId />
+  <button
+    (click)="searchBook(bookId.value)"
+    class="btn btn-outline-success ms-5"
+  >
+    Search
+  </button>
+  <button (click)="goBack()" class="btn btn-outline-info ms-5">Go Back</button>
+  <table class="table table-hover table-bordered">
+    <tr>
+      <td>Book Id:</td>
+      <td>{{ book?.id }}</td>
+    </tr>
+    <tr>
+      <td>Book Name:</td>
+      <td>{{ book?.name }}</td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td>{{ book?.price }}</td>
+    </tr>
+    <tr>
+      <td>Description:</td>
+      <td>{{ book?.description }}</td>
+    </tr>
+    <tr>
+      <td>Anhbia</td>
+      <td>
+        <img
+          src="http://localhost:3000/image/{{ book?.image }}"
+          alt=""
+          width="50px"
+          height="50px"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>Update Date:</td>
+      <td>{{ book?.updateDate }}</td>
+    </tr>
+    <tr>
+      <td>Quantity:</td>
+      <td>{{ book?.quantity }}</td>
+    </tr>
+    <tr>
+      <td>CD Code:</td>
+      <td>{{ book?.cdCode }}</td>
+    </tr>
+    <tr>
+      <td>Publisher Code:</td>
+      <td>{{ book?.publisherCode }}</td>
+    </tr>
+  </table>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>Book Id:</th>
+        <th>{{ oldBook?.BookId }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Book Name:</td>
+        <td>{{ oldBook?.BookName }}</td>
+      </tr>
+      <tr>
+        <td>Price:</td>
+        <td>{{ oldBook?.Price }}</td>
+      </tr>
+      <tr>
+        <td>Anhbia</td>
+        <td>
+          <img
+            src="http://localhost:3000/image/{{ oldBook?.Image }}"
+            alt=""
+            class="img-thumbnail rounded mx-auto d-block img-fluid"
+            style="max-height: 50vh"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

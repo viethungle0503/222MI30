@@ -1,0 +1,33 @@
+<h3 class="text-center text-white bg-dark">Check Gender</h3>
+<p>{{errMessage}}</p>
+<div class="container-fluid">
+  <div class="input-group mb-3">
+    <input #name type="text" class="form-control" placeholder="Enter the name" aria-label="Enter the name" aria-describedby="basic-addon2">
+    <span class="input-group-text" id="basic-addon2">david</span>
+  </div>
+  <button type="button" class="btn btn-success" (click)="onCheck(name.value)">Check</button>
+  <hr>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>Count</th>
+        <th>{{result?.count}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Gender</td>
+        <td>{{result?.gender}}</td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>{{result?.name}}</td>
+      </tr>
+      <tr>
+        <td>Probability</td>
+        <td>{{result?.probability}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

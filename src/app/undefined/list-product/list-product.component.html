@@ -1,0 +1,18 @@
+<p>list-product works!</p>
+<div
+  style="
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  "
+>
+  <div *ngFor="let p of products">
+    <p>{{ p.id }} - {{ p.name }} - {{ p.price }}</p>
+    <img src="{{ p.image }}" alt="" style="width: 200px; height: 200px" />
+  </div>
+</div>
+
+<ul *ngFor="let p of products">
+  <li>{{ p.id }} - {{ p.name }} - {{ p.price }}</li>
+</ul>

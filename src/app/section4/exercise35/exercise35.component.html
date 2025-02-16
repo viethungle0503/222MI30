@@ -1,0 +1,26 @@
+<p>{{ errMessage }}</p>
+<h3 class="text-center text-white bg-dark">Population of Nation</h3>
+<div class="container-fluid">
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>ID Nation</th>
+        <th>Nation</th>
+        <th>ID Year</th>
+        <th>Year</th>
+        <th>Population  </th>
+        <th>Slug Nation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let n of nations">
+        <td>{{n['ID Nation']}}</td>
+        <td>{{n?.Nation}}</td>
+        <td>{{n['ID Year']}}</td>
+        <td>{{n?.Year}}</td>
+        <td>{{n?.Population}}</td>
+        <td>{{n['Slug Nation']}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

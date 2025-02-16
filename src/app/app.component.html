@@ -1,0 +1,212 @@
+<!-- <div id="mainDiv">
+  <table border="1" [cellPadding]="1" [cellSpacing]="1" id="mainTable">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Chức năng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>
+          <button (click)="openBinding()">Open Binding</button>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>
+          <button (click)="openBindingClass()">Binding Class</button>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>
+          <button (click)="openBindingEvent()">Binding Event</button>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>
+          <button (click)="openBindingProperty()">Binding Property</button>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>
+          <button (click)="openBindingStyle()">Binding Style</button>
+        </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>
+          <button (click)="openBindingTwoWay()">Binding Two Way</button>
+        </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>
+          <button (click)="openQuadraticEquation()">Quadratic Equation</button>
+        </td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>
+          <button (click)="openLunarYear()">Lunar Year</button>
+        </td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>
+          <button (click)="openJsonObjectModel()">Json Object Model</button>
+        </td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>
+          <button (click)="openJsonArrayModel()">Json Array Model</button>
+        </td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>
+          <button (click)="openJsonArrayModelWithEventComponent()">
+            Json Array Model With Event Component
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>
+          <button (click)="openJsonArrayModelProductCatalogComponent()">
+            Json Array Model - Product - Catalog
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>
+          <button (click)="openJsonArrayModelProductHttpServiceComponent()">
+            Json Array Model - Product - HTTP Service
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>
+          <button (click)="openServiceProductHttpHandleErrorComponent()">
+            Service Product Http Handle Error
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>
+          <button (click)="openJsonObjectModelCustomerServiceComponent()">
+            Json Object Model Customer Service
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>
+          <button (click)="openJsonArrayModelGroupCustomersComponent()">
+            Json Array Model Group Customers
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>
+          <button (click)="openLoginSceenComponent()">
+            Login Screen
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <router-outlet></router-outlet>
+</div> -->
+<button [routerLink]="['../']" class="btn btn-outline-info">Back</button>
+<main id="main">
+  <h1>Module 1</h1>
+  <div class="module">
+    <button (click)="openBinding()" class="btn btn-outline-danger">Bài 3</button>
+    <!-- <button routerLink="section1/binding" class="btn btn-outline-danger">Bài 3</button> -->
+    <button [routerLink]="'bindingproperty'" class="btn btn-outline-danger">Bài 4</button>
+    <button [routerLink]="'bindingclass'" class="btn btn-outline-danger">Bài 5</button>
+    <button [routerLink]="'bindingstyle'" class="btn btn-outline-danger">Bài 6</button>
+    <button [routerLink]="'bindingevent'" class="btn btn-outline-danger">Bài 7</button>
+    <button [routerLink]="'bindingtwoway'" class="btn btn-outline-danger">Bài 8</button>
+    <button [routerLink]="'quadraticequation'" class="btn btn-outline-danger">Bài 9</button>
+    <button [routerLink]="'lunaryear'" class="btn btn-outline-danger">Bài 10</button>
+
+  </div>
+  <h1>Module 2</h1>
+  <div class="module">
+    <button [routerLink]="'jsonobjectmodel'" class="btn btn-outline-danger">Bài 11</button>
+    <button [routerLink]="'jsonarraymodel'" class="btn btn-outline-danger">Bài 12</button>
+    <button [routerLink]="'jsonarraymodelwithevent'" class="btn btn-outline-danger">Bài 13</button>
+    <button [routerLink]="'jsonarraymodelproductcatalog'" class="btn btn-outline-danger">Bài 14</button>
+    <button [routerLink]="'jsonarraymodelproducthttpservice'" class="btn btn-outline-danger">Bài 15</button>
+    <button [routerLink]="'serviceproducthttphandleerror'" class="btn btn-outline-danger">Bài 16</button>
+    <button [routerLink]="'jsonobjectmodelcustomerservice'" class="btn btn-outline-danger">Bài 17</button>
+    <button [routerLink]="'jsonarraymodelgroupcustomers'" class="btn btn-outline-danger">Bài 18</button>
+  </div>
+  <h1>Module 3</h1>
+  <div class="module">
+    <button [routerLink]="'loginscreen'" class="btn btn-outline-danger">Bài 21</button>
+  </div>
+  <h1>Module 4</h1>
+  <div class="module">
+    <button [routerLink]="'exercise29'" class="btn btn-outline-danger">Bài 29</button>
+    <button [routerLink]="'exercise30'" class="btn btn-outline-danger">Bài 30 + 31</button>
+    <button [routerLink]="'exercise32'" class="btn btn-outline-danger">Bài 32</button>
+    <button [routerLink]="'exercise33'" class="btn btn-outline-danger">Bài 33</button>
+    <button [routerLink]="'exercise34'" class="btn btn-outline-danger">Bài 34</button>
+    <button [routerLink]="'exercise35'" class="btn btn-outline-danger">Bài 35</button>
+    <button [routerLink]="'exercise36'" class="btn btn-outline-danger">Bài 36</button>
+  </div>
+  <h1>Module 5</h1>
+  <div class="module">
+    <button [routerLink]="'book'" class="btn btn-outline-danger">Bài 42 + 43</button>
+    <button [routerLink]="'bookdetail'" class="btn btn-outline-danger">Bài 44 + 45</button>
+    <button [routerLink]="'booknew'" class="btn btn-outline-danger">Bài 46 + 47</button>
+    <button [routerLink]="'bookupdate'" class="btn btn-outline-danger">Bài 48 + 49</button>
+    <button [routerLink]="'bookdelete'" class="btn btn-outline-danger">Bài 50 + 51</button>
+    <button [routerLink]="'bookmanagement'" class="btn btn-outline-danger">Bài 54</button>
+  </div>
+  <h1>Module 6</h1>
+  <div class="module">
+    <button [routerLink]="'exercise57'" class="btn btn-outline-danger">Bài 57 + 60 + 61</button>
+    <button [routerLink]="'exercise58'" class="btn btn-outline-danger">Bài 58</button>
+    <button [routerLink]="'exercise59'" class="btn btn-outline-danger">Bài 59</button>
+    <button [routerLink]="'exercise62'" class="btn btn-outline-danger">Bài 62</button>
+  </div>
+  <h1>Module 7</h1>
+  <div class="module">
+    <button [routerLink]="'exercise65'" class="btn btn-outline-danger">Bài 65</button>
+  </div>
+  <!-- <table>
+    <tr>
+      <td>
+        <button [routerLink]="'product'">Product details </button>
+      </td>
+      <td>
+        <button (click)="openListProduct()">List Product</button>
+      </td>
+      <td>
+        <a [routerLink]="'product'">Xem chi tiết</a>
+      </td>
+      <td>
+        <a [routerLink]="'list-product2'">List Product 2</a>
+      </td>
+      <td>
+        <a [routerLink]="'list-catalog'">List Catalog</a>
+      </td>
+    </tr>
+    </table> -->
+</main>
+<footer>
+  <router-outlet></router-outlet>
+</footer>

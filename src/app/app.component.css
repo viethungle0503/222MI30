@@ -1,0 +1,36 @@
+/* #mainDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+table {
+  display: inline-block;
+}
+router-outlet + * {
+  
+  max-height: 100vh;
+  max-width: 75vw;
+}
+router-outlet {
+  margin-left: 20px;
+}
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+#mainTable > tbody > tr > td:nth-child(2) > button {
+  background-color: transparent;
+  border-radius: 10%;
+}
+tr :hover {
+  background-color: yellow; 
+  cursor: pointer;
+} */
+
+.module {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+router-outlet {
+  margin-top: 10px;
+}

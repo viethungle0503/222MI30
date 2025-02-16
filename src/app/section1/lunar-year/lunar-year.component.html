@@ -1,0 +1,57 @@
+<table border="1" [cellPadding]="0" [cellSpacing]="0">
+  <tr>
+    <td colspan="2" style="color: blue; font-weight: bold; text-align: center;">Chuyển đổi Dương lịch thành Âm lịch</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      Ngày
+      <select [(ngModel)]="selectedDate">
+        <option *ngFor="let date of getDates()" [ngValue]="date">
+          {{ date }}
+        </option>
+      </select>
+      Tháng
+      <select [(ngModel)]="selectedMonth">
+        <option *ngFor="let month of months" [ngValue]="month">
+          {{ month }}
+        </option>
+      </select>
+      Năm
+      <select [(ngModel)]="selectedYear">
+        <option *ngFor="let year of years" [ngValue]="year">{{ year }}</option>
+      </select>
+      <button (click)="convert()">Chuyển đổi</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="color: blue; font-weight: bold; text-align: center;">Âm lịch</td>
+  </tr>
+  <tr>
+    <table border="1" [cellPadding]="0" [cellSpacing]="0" style="width: 100%;">
+      <tr>
+        <td>Thứ trong tuần</td>
+        <td>{{dayInWeek}}</td>
+      </tr>
+      <tr>
+        <td>Ngày tháng năm âm</td>
+        <td>{{dateString}}</td>
+      </tr>
+      <tr>
+        <td>Năm</td>
+        <td>{{yearString}}</td>
+      </tr>
+      <tr>
+        <td>Tháng</td>
+        <td>{{monthString}}</td>
+      </tr>
+      <tr>
+        <td>Ngày</td>
+        <td>{{dayString}}</td>
+      </tr>
+      <tr>
+        <td>Giờ</td>
+        <td>{{hourString}}</td>
+      </tr>
+    </table>
+  </tr>
+</table>

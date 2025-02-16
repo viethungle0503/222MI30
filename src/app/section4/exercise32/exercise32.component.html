@@ -1,0 +1,45 @@
+<p>{{ errMessage }}</p>
+<h3 class="text-center text-white bg-dark p-3">Bitcoin</h3>
+<div class="container">
+  <table class="table table-hover table-bordered">
+    <caption
+      class="caption-top text-center fs-1 text-uppercase fw-bold .text-success"
+    >
+      Time
+    </caption>
+    <tbody>
+      <tr>
+        <td>updated</td>
+        <td>{{ coin?.time?.updated }}</td>
+      </tr>
+      <tr>
+        <td>updatedISO</td>
+        <td>{{ coin?.time?.updatedISO }}</td>
+      </tr>
+      <tr>
+        <td>updateduk</td>
+        <td>{{ coin?.time?.updateduk }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Symbol</th>
+        <th>Rate</th>
+        <th>Description</th>
+        <th>Rate Float</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let currency of coin?.bpi">
+        <td>{{ currency.code }}</td>
+        <td><span [innerHTML]="currency.symbol"></span></td>
+        <td>{{ currency.rate }}</td>
+        <td>{{ currency.description }}</td>
+        <td>{{ currency.rate_float }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

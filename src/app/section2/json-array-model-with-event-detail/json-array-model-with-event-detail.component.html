@@ -1,0 +1,20 @@
+<button (click)="goBack()">Go Back</button>
+<table>
+ <tr>
+ <td>ID:</td>
+ <td>{{selectedProduct?.id}}</td>
+ </tr>
+ <tr>
+ <td>Name:</td>
+ <td>{{selectedProduct?.name}}</td>
+ </tr>
+ <tr>
+ <td>Price:</td>
+ <td>{{selectedProduct?.price}}</td>
+ </tr>
+ <tr>
+ <td colspan="2">
+ <img [src]="selectedProduct?.src" width="100px" height="100px"/>
+ </td> 
+ </tr>
+</table>

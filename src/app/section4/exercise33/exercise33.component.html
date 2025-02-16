@@ -1,0 +1,28 @@
+<p>{{ errMessage }}</p>
+<h3 class="text-center text-white bg-dark">APIs List</h3>
+<div class="container-fluid">
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>API</th>
+        <th>Description</th>
+        <th>Auth</th>
+        <th>HTTPS</th>
+        <th>Cors</th>
+        <th>Link</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let applicationProgrammingInterface of entries">
+        <td>{{applicationProgrammingInterface.API}}</td>
+        <td>{{applicationProgrammingInterface.Description}}</td>
+        <td>{{applicationProgrammingInterface.Auth}}</td>
+        <td>{{applicationProgrammingInterface.HTTPS}}</td>
+        <td>{{applicationProgrammingInterface.Cors}}</td>
+        <td>{{applicationProgrammingInterface.Link}}</td>
+        <td>{{applicationProgrammingInterface.Category}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

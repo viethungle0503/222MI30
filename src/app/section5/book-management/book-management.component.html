@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <h1 class="text-center">{{ title | uppercase }}</h1>
+  <button (click)="onCreate()" id="btnCreate" class="btn btn-outline-warning">
+    Create new
+  </button>
+  <p>{{ errMessage }}</p>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>TenSach</th>
+        <th>GiaBan</th>
+        <th>Mota</th>
+        <th>Anhbia</th>
+        <th>Ngaycapnhat</th>
+        <th>Soluongton</th>
+        <th>MaCD</th>
+        <th>MaNXB</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let b of books">
+        <td>{{ b?.name }}</td>
+        <td>{{ b?.price }}</td>
+        <td>{{ b?.description }}</td>
+        <td>
+          <img
+            src="http://localhost:3000/image/{{ b?.image }}"
+            alt=""
+            width="50px"
+            height="50px"
+          />
+        </td>
+        <td>{{ convertStringToDate(b?.updateDate) }}</td>
+        <td>{{ b?.quantity }}</td>
+        <td>{{ b?.cdCode }}</td>
+        <td>{{ b?.publisherCode }}</td>
+        <td>
+          <div>
+            <button (click)="onEdit(b)" class="btn btn-outline-primary">Edit</button>
+            <button (click)="onDetail(b)" class="btn btn-outline-success">Detail</button>
+            <button (click)="onDelete(b)" class="btn btn-outline-danger">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,247 @@
+<div class="container-fluid">
+  <p>{{ errMessage }}</p>
+  <h1>{{ uploadProgress }}</h1>
+  <button (click)="goBack()" class="btn btn-outline-success">Go Back</button>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <td>Book Id:</td>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            #name="ngModel"
+            name="BookId"
+            id="BookId"
+            placeholder="Nhập Book Id"
+            [(ngModel)]="book.id"
+          />
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Book Name:</td>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            #name="ngModel"
+            name="BookName"
+            id="BookName"
+            placeholder="Nhập Book Name"
+            [(ngModel)]="book.name"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Price:</td>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            #name="ngModel"
+            name="BookPrice"
+            id="BookPrice"
+            placeholder="Nhập Price"
+            [(ngModel)]="book.price"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Description:</td>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            #name="ngModel"
+            name="BookDescription"
+            id="BookDescription"
+            placeholder="Nhập Description"
+            [(ngModel)]="book.description"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Image</td>
+        <td>
+          <input
+            [hidden]="true"
+            type="file"
+            class="form-control"
+            #name="ngModel"
+            name="BookImage"
+            id="BookImage"
+            placeholder="Nhập Image"
+            [(ngModel)]="book.image"
+            (change)="onFileSelected($event)"
+            #fileUpload
+          />
+          <div class="mt-2">
+            <img
+              [hidden]="!file"
+              alt=""
+              width="50px"
+              height="50px"
+              #demoImage
+            />
+            <button
+              mat-mini-fab
+              color="primary"
+              class="btn-outline-success btn"
+              (click)="fileUpload.click()"
+            >
+              {{ file ? file.name : "Upload" }}
+            </button>
+            <button
+              (click)="reset(); fileUpload.value = ''"
+              class="btn-outline-danger btn ms-5"
+            >
+              Reset
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Update Date:</td>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            #name="ngModel"
+            name="BookUpdateDate"
+            id="BookUpdateDate"
+            placeholder="Nhập UpdateDate"
+            [(ngModel)]="book.updateDate"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Quantity:</td>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            #name="ngModel"
+            name="BookQuantity"
+            id="BookQuantity"
+            placeholder="Nhập Quantity"
+            [(ngModel)]="book.quantity"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Book CD Code:</td>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            #name="ngModel"
+            name="BookCDCode"
+            id="BookCDCode"
+            placeholder="Nhập CDCode"
+            [(ngModel)]="book.cdCode"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Publisher Code:</td>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            #name="ngModel"
+            name="BookPublisherCode"
+            id="BookPublisherCode"
+            placeholder="Nhập Book Publisher Code"
+            [(ngModel)]="book.publisherCode"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button (click)="postBook()" class="btn btn-outline-warning">
+            Submit
+          </button>
+          <button (click)="defaultValue()" class="btn btn-outline-info">
+            Default Value
+          </button>
+          <button (click)="clear()" class="btn btn-outline-danger">
+            Clear
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <tr>
+      <td>Book Id:</td>
+      <td>
+        <input
+          type="text"
+          class="form-control"
+          #name="ngModel"
+          name="BookId"
+          id="BookId"
+          placeholder="Nhập Book Id"
+          [(ngModel)]="oldBook.BookId"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>Book Name:</td>
+      <td>
+        <input
+          type="text"
+          class="form-control"
+          #name="ngModel"
+          name="BookName"
+          id="BookName"
+          placeholder="Nhập Book Name"
+          [(ngModel)]="oldBook.BookName"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td>
+        <input
+          type="text"
+          class="form-control"
+          #name="ngModel"
+          name="BookPrice"
+          id="BookPrice"
+          placeholder="Nhập Price"
+          [(ngModel)]="oldBook.Price"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button (click)="postOldBook()">Submit</button>
+      </td>
+    </tr>
+  </table>
+  <table border="1">
+    <tr>
+      <td>BookId</td>
+      <td>BookName</td>
+      <td>Price</td>
+      <td>Image</td>
+    </tr>
+    <tbody>
+      <tr *ngFor="let book of oldBooks">
+        <td>{{ book.BookId }}</td>
+        <td>{{ book.BookName }}</td>
+        <td>{{ book.Price }}</td>
+        <td>
+          <img
+            src="assets/book_images/{{ book.Image }}"
+            width="50px"
+            height="50px"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

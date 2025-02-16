@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <h1 class="text-center text-danger bg-dark">{{ errMessage }}</h1>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">🔍</span>
+    <button
+      class="btn btn-outline-secondary dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Dropdown
+    </button>
+    <ul class="dropdown-menu">
+      <li *ngFor="let category of allData">
+        <a class="dropdown-item" (click)="onGetOneFashionGroupByStyle(category[0])">{{ category[0] }}</a>
+      </li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item" (click)="onGetAll()">All</a></li>
+    </ul>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Fashion Style"
+      aria-label="Fashion Style"
+      aria-describedby="basic-addon1"
+      #fashionStyleInput
+    />
+    <button type="button" class="btn btn-warning" (click)="onGetOneFashionGroupByStyle(fashionStyleInput.value)">Search</button>
+  </div>
+  <table class="table table-hover table-bordered">
+    <tbody *ngFor="let category of data">
+      <tr>
+        <td>
+          <h1 class="fw-bold text-center">{{ category[0] }}</h1>
+        </td>
+      </tr>
+      <tr>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          <!-- <div *ngFor="let f of category[1]">
+            <img src="{{f.fashion_image}}" alt="">
+            <p>{{f.fashion_subject}}</p>
+          </div> -->
+          <div class="col" *ngFor="let f of category[1]">
+            <div class="card" style="cursor: pointer;" (click)="onDetail(f)">
+              <img
+                src="{{ f.fashion_image }}"
+                class="card-img-top img-thumbnail img-fluid"
+                style="max-height: 40vh; height: 40vh"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{ f.fashion_subject }}</h5>
+                <!-- <p class="card-text">{{f.fashion_detail}}</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </tr>
+    </tbody>
+  </table>
+</div>

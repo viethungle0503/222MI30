@@ -1,0 +1,39 @@
+h1{
+  width: 100%;
+  text-align: center;
+  font-weight: 200;
+}
+#main {
+  display: flex;
+  flex-direction: row;
+}
+#left {
+  width: 30%;
+}
+#left > img {
+  width: 100%;
+  height: auto;
+}
+#right{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+#right >input{
+  border-radius: 15px;
+  align-items: center;
+  border: 1px solid black;
+}
+#right > button {
+  background-color: rgb(31, 20, 185);
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 15px;
+}
+label {
+  width: fit-content;
+}
+#saveBox {
+  display: inline-block;
+  width: 10%;
+}
